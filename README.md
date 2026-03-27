@@ -10,11 +10,11 @@
   </p>
    
 <h4>
-    <a href="https://github.com/ese-ada-lovelace-2024/irp-as4623/tree/main/deliverables/as4623-final-report.pdf">Report</a>
+    <a href="https://github.com/arushisinha98/emerging-crises/blob/main/report.pdf">Report</a>
   <span> · </span>
-    <a href="https://github.com/ese-ada-lovelace-2024/irp-as4623/tree/main/docs">Documentation</a>
+    <a href="https://github.com/arushisinha98/emerging-crises/tree/main/docs">Documentation</a>
   <span> · </span>
-    <a href="https://github.com/ese-ada-lovelace-2024/irp-as4623/tree/main/demos">Notebooks</a>
+    <a href="https://github.com/arushisinha98/emerging-crises/tree/main/demos">Notebooks</a>
 </h4>
 
 </div>
