@@ -35,6 +35,9 @@ jobs:
           pixi run pip install -e .
         
       - name: Run pytest
+        env:
+          HUGGINGFACE_USERNAME: ${{ secrets.HUGGINGFACE_USERNAME }}
+          HUGGINGFACE_TOKEN: ${{ secrets.HUGGINGFACE_TOKEN }}
         run: |
           export PATH="$HOME/.pixi/bin:$PATH"
           export PYTHONPATH=$PYTHONPATH:.
