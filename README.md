@@ -104,6 +104,10 @@ Here is a brief description of the content in each Notebook:
 | `5.LSTMClassifier.ipynb` | End-to-end LSTM classifier with attention mechanisms, trained using precision-based focal loss. Includes transfer learning experiments for emerging markets. |
 | `6.FeatureSpace.ipynb` | A visualization of the feature space of the trained LSTM Classifier. |
 
+## Key Takeaways
+
+<img src="figures/express-presentation.png"/>
+
 <!-- Contact -->
 ## Contact
 
