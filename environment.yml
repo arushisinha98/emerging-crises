@@ -1,0 +1,46 @@
+name: IRP2025
+channels:
+  - conda-forge
+  - defaults
+  - huggingface
+dependencies:
+  - python=3.12.2
+  - pip
+  - pandas==2.3.1
+  - numpy==1.26.4
+  - bayesian-optimization==3.1.0
+  - cffi==1.15.1
+  - cachetools==6.1.0
+  - datasets==2.21.0
+  - fancyimpute==0.7.0
+  - huggingface_hub==0.33.1
+  - imbalanced-learn==0.12.4
+  - ipykernel==6.0.0
+  - ipywidgets==7.6.0
+  - knnimpute==0.1.0
+  - lazy_loader==0.4
+  - lightgbm==4.6.0
+  - liblightgbm==4.6.0
+  - Markdown==3.8.2
+  - markdown-it-py==3.0.0
+  - MarkupSafe==3.0.2
+  - matplotlib==3.9.4
+  - openpyxl==3.1.2
+  - python-dotenv==0.19.0
+  - pyarrow==20.0.0
+  - pyct==0.5.0
+  - pynndescent==0.5.13
+  - pytest==8.4.1
+  - pyviz_comms==3.0.6
+  - requests==2.27.1
+  - seaborn==0.11.0
+  - scikit-learn==1.0.2
+  - statsmodels==0.14.5
+  - scikit-image==0.24.0
+  - torch==2.7.1
+  - tqdm==4.67.1
+  - umap-learn==0.5.9.post2
+  - xgboost==2.1.4
+  - pip:
+      - world-bank-data==0.1.4
+      - yfinance==0.2.65

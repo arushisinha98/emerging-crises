@@ -1,0 +1,158 @@
+{
+  "DATA_TAGS": [
+    "WORLDBANK",
+    "OECD",
+    "YahooFinance"
+  ],
+
+  "WORLDBANK_TOPICS": [
+    "Economy & Growth",
+    "Financial Sector", 
+    "External Debt"
+  ],
+  "WORLDBANK_SOURCES": [
+    "World Development Indicators",
+    "Global Economic Monitor",
+    "Global Jobs Indicators Database (JOIN)",
+    "Global Financial Development"
+  ],
+
+  "WORLDBANK_COLUMN_MAPPINGS": {
+    "name_column": "name",
+    "note_column": "sourceNote",
+    "topics_column": "topics",
+    "id_column": "id"
+  },
+
+  "OECD_COLUMN_MAPPINGS": {
+    "name_column": "series_name",
+    "note_column": "dimensions",
+    "topics_column": "",
+    "id_column": "series_code"
+  },
+
+  "DEVELOPED_MARKETS": [
+    "AUS", "BEL", "CAN", "CHE", "DEU", "DNK", "ESP", "FIN",
+    "FRA", "GBR", "ITA", "JPN", "NLD", "NOR", "PRT", "SWE",
+    "USA"
+  ],
+
+  "EMERGING_MARKETS": [
+    "AFG", "AGO", "ATG", "ATG", "AZE", "BGD", "BRB",
+    "BLZ", "BOL", "BRA", "CAF", "TCD", "CHL", "CHN", 
+    "COL", "COD", "COG", "CRI", "DJI", "DOM", "ECU", 
+    "EGY", "SLV", "GNQ", "ERI", "SWZ", "GMB", "GHA", 
+    "GTM", "HTI", "HND", "IND", "IDN", "IRN", "KAZ", 
+    "KEN", "LAO", "LBN", "LSO", "LBR", "LBY", "MWI", 
+    "MYS", "MLI", "MUS", "MEX", "MNG", "MAR", "MMR", 
+    "NAM", "NPL", "NIC", "NGA", "PAK", "PRY", "PER", 
+    "PHL", "SEN", "SLE", "ZAF", "LKA", "SUR", "SYR",
+    "TWN", "TJK", "THA", "TUN", "TUR", "URY", "UZB", 
+    "VEN", "VNM", "YEM", "ZMB", "ZWE"
+  ],
+
+  "VARIABLE_CLASSIFICATION": {
+    "BUCKETS": {
+      "1": "Output and capacity utilization measures",
+      "2": "Consumption and sales data", 
+      "3": "Inventories and orders",
+      "4": "Interest rates and asset prices",
+      "5": "Exchange rates and foreign trade",
+      "6": "Employment metrics",
+      "7": "Earnings and labor force measures", 
+      "8": "Wages and prices",
+      "9": "Government fiscal activity measures",
+      "10": "Other business condition indicators",
+      "-1": "Others"
+    },
+    "WORLDBANK_TOPIC_OVERRIDES": {
+      "Trade": 5, 
+      "External Debt": 5, 
+      "Financial Sector": 4, 
+      "Public Sector": 9
+    },
+    "WORLDBANK_EXCLUDE_TOPICS": [
+      "Health",
+      "Environment",
+      "Agriculture & Rural Development"
+    ],
+    "EXCLUDE_KEYWORDS": ["\\brural\\b", "\\burban\\b", "\\bfemale\\b", "\\bmale\\b", "\\byoung adults\\b", "\\bolder adults\\b",
+                         "\\brichest\\b", "\\bpoorest\\b", "\\bprimary education\\b", "\\bsecondary education\\b",
+                         "\\baged 15-24\\b", "\\bdummy\\b", "\\bcrisis\\b"],
+    "KEYWORDS": {
+      "1": ["\\bgdp\\b", "\\bgross domestic product\\b", "\\bvalue added\\b", "\\bgva\\b", "\\bcapital formation\\b", "\\bindustrial production\\b", "\\bmanufacturing\\b", "\\boutput\\b", "\\bproduction\\b"],
+      "2": ["\\bconsumption\\b", "\\bexpenditure\\b", "\\bretail\\b", "\\bsales\\b"],
+      "3": ["\\binventory\\b", "\\bchanges in inventories\\b", "\\borders\\b", "\\bshipment\\b"],
+      "4": ["\\binterest rate\\b", "\\bdeposit rate\\b", "\\bbond\\b", "\\bcapitalization\\b", "\\bstock\\b", "\\boutstanding\\b", "\\blevel\\b", "\\bspread\\b", "\\binterest\\b", "\\bfinancial\\b", "\\bcredit\\b", "\\bmoney supply\\b", "\\bshare price\\b"],
+      "5": ["\\bexchange rate\\b", "\\bexport\\b", "\\bimport\\b", "\\btrade\\b", "\\bcurrent account\\b", "\\bbalance of payments\\b", "\\bBoP\\b"],
+      "6": ["\\bemployment\\b", "\\bunemploy\\b", "\\bunderemploy\\b", "\\blabor force\\b", "\\bjob\\b", "\\bmigration\\b"],
+      "7": ["\\bearning\\b", "\\bincome\\b", "\\bremittance\\b", "\\bwage\\b", "\\bcompensation\\b"],
+      "8": ["\\bprice\\b", "\\binflation\\b", "\\bdeflator\\b", "\\bcpi\\b", "\\bppi\\b"],
+      "9": ["\\bgovernment\\b", "\\bfiscal\\b", "\\btax\\b", "\\brevenue\\b", "\\bpublic sector\\b", "\\bbroad money\\b"],
+      "10": ["\\bconfidence\\b", "\\bsurvey\\b", "\\bindicator\\b", "\\bsentiment\\b", "\\bbusiness\\b"]
+    }
+  },
+
+  "YAHOO_FINANCE_TICKERS": {
+  "Emerging Market ETFs": [
+    "IEMG",
+    "VWO",
+    "EEM",
+    "SCHE",
+    "SPEM",
+    "EEMS",
+    "FRDM",
+    "EMQQ",
+    "ESGE",
+    "EMGF",
+    "FNDE",
+    "EMHY",
+    "EMB",
+    "HYEM"
+  ],
+  "Global REITs": [
+    "REET",
+    "SRET",
+    "VNQI",
+    "IFGL",
+    "VNQ",
+    "XLRE",
+    "SCHH",
+    "IYR",
+    "USRT",
+    "EMRE",
+    "IFAS"
+  ],
+  "Currency-Exposed ETFs": [
+    "FXY",
+    "FXE",
+    "FXF",
+    "UUP",
+    "CEW",
+    "FLKR",
+    "EWY",
+    "EWT",
+    "EWS",
+    "EWM",
+    "EIDO",
+    "THD",
+    "FXI",
+    "ASHR",
+    "EWZ",
+    "INDA",
+    "EZA"
+  ],
+  "Foreign Exchange": [
+    "INR=X",
+    "BRL=X",
+    "ZAR=X",
+    "TRY=X",
+    "IDR=X",
+    "THB=X",
+    "MXN=X",
+    "RUB=X",
+    "COP=X",
+    "PHP=X"
+  ]
+}
+}

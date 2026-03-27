@@ -1,0 +1,57 @@
+{
+  "DATA_TAGS": ["TEST", "WORLDBANK", "OECD"],
+
+  "TEST_COLUMN_MAPPINGS": {
+    "name_column": "name",
+    "note_column": "description",
+    "topics_column": "",
+    "id_column": ""
+  },
+
+  "WORLDBANK_TOPICS": ["Financial Sector"],
+  "WORLDBANK_SOURCES": ["World Development Indicators"],
+  "WORLDBANK_COLUMN_MAPPINGS": {
+    "name_column": "name",
+    "note_column": "sourceNote",
+    "topics_column": "topics",
+    "id_column": "id"
+  },
+
+  "OECD_COLUMN_MAPPINGS": {
+    "name_column": "series_name",
+    "note_column": "dimensions",
+    "topics_column": "",
+    "id_column": "series_code"
+  },
+
+  "DEVELOPED_MARKETS": ["USA"],
+  "EMERGING_MARKETS": ["BRA"],
+
+  "VARIABLE_CLASSIFICATION": {
+    "BUCKETS": {
+      "1": "Consumption and sales data", 
+      "2": "Interest rates and asset prices",
+      "3": "Exchange rates and foreign trade",
+      "4": "Employment metrics",
+      "5": "Wages and prices",
+      "6": "Government fiscal activity measures",
+      "-1": "Others"
+    },
+    "KEYWORDS": {
+      "1": ["consumption"],
+      "2": ["interest rate"],
+      "3": ["exchange rate"],
+      "4": ["employment"],
+      "5": ["wage"],
+      "6": ["government"]
+    },
+    "EXCLUDE_KEYWORDS": []
+  },
+
+  "YAHOO_FINANCE_TICKERS": {
+    "World Indices": ["^GSPC"],
+    "Govt. Bonds": ["^IRX"],
+    "REITs": ["VNQ"],
+    "ForEx": ["EURUSD=X"]
+  }
+}
