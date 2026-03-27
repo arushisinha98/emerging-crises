@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "emerging-crises"
+version = "0.1.0"
+description = "Challenges in and recommendations for predicting crises in emerging markets"
+authors = [
+    { name = "Arushi Sinha", email = "115908316+arushisinha98@users.noreply.github.com" }
+]
+readme = "README.md"
+requires-python = ">=3.8"
+license = { file = "LICENSE" }
+
+[project.urls]
+Homepage = "https://github.com/arushisinha98/emerging-crises"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
