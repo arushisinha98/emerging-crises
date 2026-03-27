@@ -63,11 +63,7 @@ Start by cloning the repository. Install the dependencies and run the tests. The
 
 
 ```bash
-# install dependencies
 pixi install
-# temporarily add project root to python path
-export PYTHONPATH=$PYTHONPATH:.
-# run testss
 pixi run pytest -v .
 ```
 
