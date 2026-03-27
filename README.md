@@ -106,7 +106,11 @@ Here is a brief description of the content in each Notebook:
 
 ## Key Takeaways
 
-<img src="figures/express-presentation.png"/>
+<img src="figures/encode-pres1.png" width="600" height="auto"/>
+<img src="figures/encode-pres2.png" width="600" height="auto"/>
+<img src="figures/encode-pres3.png" width="600" height="auto"/>
+<img src="figures/encode-pres4.png" width="600" height="auto"/>
+<img src="figures/encode-pres5.png" width="600" height="auto"/>
 
 <!-- Contact -->
 ## Contact
