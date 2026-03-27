@@ -5,6 +5,23 @@ from huggingface_hub import login
 from typing import List, Union, Dict, Tuple
 import os
 
+
+def _normalize_frequency_alias(freq: str) -> str:
+    """Map pandas frequency aliases to canonical labels used by this project."""
+    if not freq:
+        return "Unknown"
+
+    freq = str(freq).upper()
+    if freq.startswith("D"):
+        return "D"
+    if freq.startswith("ME") or freq.startswith("M"):
+        return "M"
+    if freq.startswith("QE") or freq.startswith("Q"):
+        return "Q"
+    if freq.startswith("YE") or freq.startswith("Y") or freq.startswith("A"):
+        return "Y"
+    return "Unknown"
+
 def upload_to_huggingface(data: Union[pd.DataFrame, Dict[str, pd.DataFrame]], 
                           repo_name: str,
                           config_name: str = None) -> None:
@@ -88,6 +105,14 @@ def get_series_frequency(dates: pd.Series) -> str:
 
     # Convert to datetime and calculate differences
     dates = pd.to_datetime(dates).sort_values()
+
+    # Prefer pandas' native inference when possible.
+    if len(dates) >= 3:
+        inferred = pd.infer_freq(dates)
+        normalized = _normalize_frequency_alias(inferred)
+        if normalized != "Unknown":
+            return normalized
+
     diffs = [(dates[i] - dates[i-1]).days for i in range(1, len(dates))]
     mode_diff = max(set(diffs), key=diffs.count)
 
@@ -155,18 +180,56 @@ def join_timelines(dates1: pd.Series, dates2: pd.Series = None) -> pd.DatetimeIn
     else:
         return pd.DatetimeIndex([])
     
+    def _infer_frequency_info(series: pd.Series) -> Tuple[str, Union[str, None]]:
+        """Return canonical label and inferred pandas alias (if available)."""
+        if len(series) < 2:
+            return "Unknown", None
+
+        series_dt = pd.to_datetime(series).sort_values()
+
+        if len(series_dt) >= 3:
+            inferred = pd.infer_freq(series_dt)
+            normalized = _normalize_frequency_alias(inferred)
+            if normalized != "Unknown":
+                return normalized, str(inferred).upper()
+
+        return get_series_frequency(series), None
+
     # Determine frequency using original series
     freq_importance = {'D': 4, 'M': 3, 'Q': 2, 'Y': 1, 'Unknown': 0}
-    freq1 = get_series_frequency(dates1) if len(dates1) > 1 else 'Unknown'
-    freq2 = get_series_frequency(dates2) if len(dates2) > 1 else 'Unknown'
+    freq1, alias1 = _infer_frequency_info(dates1)
+    freq2, alias2 = _infer_frequency_info(dates2)
 
-    freq = freq1 if freq_importance[freq1] > freq_importance[freq2] else freq2
+    if freq_importance[freq1] > freq_importance[freq2]:
+        freq = freq1
+        selected_alias = alias1
+    else:
+        freq = freq2
+        selected_alias = alias2
 
     # if freq != "D":
     #     freq += "E"  # end of month/year (to ensure no look ahead bias)
     
+    # Pandas 3 uses end-of-period aliases (e.g. ME/QE/YE).
+    pandas_aliases = {
+        'D': 'D',
+        'M': 'ME',
+        'Q': 'QE',
+        'Y': 'YE',
+    }
+
+    # Preserve start-of-period aliases when explicitly inferred from inputs.
+    if selected_alias and (
+        selected_alias.startswith('MS')
+        or selected_alias.startswith('QS')
+        or selected_alias.startswith('YS')
+    ):
+        pandas_freq = selected_alias
+    else:
+        pandas_freq = pandas_aliases.get(freq, 'D')
+
     # Return DatetimeIndex
-    return pd.date_range(start=mindate, end=maxdate, freq=freq)
+    return pd.date_range(start=mindate, end=maxdate, freq=pandas_freq)
 
 def merge_timeseries(dfs: List[pd.DataFrame], on: str = 'Country') -> pd.DataFrame:
     """

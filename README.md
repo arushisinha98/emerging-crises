@@ -57,40 +57,28 @@ This project uses HuggingFace Hub to run the data pipeline. In your .env file, s
 `HUGGINGFACE_USERNAME`
 `HUGGINGFACE_TOKEN`
 
-<!-- Installation -->
-### Installation
+### Get Started
 
-Start by cloning the repository and in a clean Python environment, install the dependencies.
+Start by cloning the repository. Install the dependencies and run the tests. The pytests created for this repository are designed to test the functionality of the data pipeline. To run these tests, run the following command on your terminal.
 
-```bash
-git clone https://github.com/ese-ada-lovelace-2024/irp-as4623
-cd irp-as4623
-conda create -n IRP2025 python=3.12.2
-pip install -e .
-conda activate IRP2025
-conda install pip
-```
-
-Refer to setup.py for a list of the dependencies.
-
-<!-- Running Tests -->
-### Running Tests
-
-The pytests created for this repository are designed to test the functionality of the data pipeline. To run these tests, run the following command on your terminal.
 
 ```bash
-  pytest -v .
+# install dependencies
+pixi install
+# temporarily add project root to python path
+export PYTHONPATH=$PYTHONPATH:.
+# run testss
+pixi run pytest -v .
 ```
 
 This will take a few minutes but it is important that these run to ensure that the data pipeline is functioning correctly for you to be able to reproduce the results in the report.
 
-<!-- Usage -->
 ## Usage
 
 Once the setup is complete and the tests have passed, run the main data pipeline to load the necessary datasets onto your HuggingFace Hub.
 
 ```bash
-python main.py
+pixi run python -m main.py
 ```
 
 Note that the following data files will need to be in your local `data` directory to run this pipeline.
@@ -120,17 +108,10 @@ Here is a brief description of the content in each Notebook:
 | `5.LSTMClassifier.ipynb` | End-to-end LSTM classifier with attention mechanisms, trained using precision-based focal loss. Includes transfer learning experiments for emerging markets. |
 | `6.FeatureSpace.ipynb` | A visualization of the feature space of the trained LSTM Classifier. |
 
-<!-- License -->
-## License
-
-This output is the intellectual property of Arushi SINHA and Move78. See <a href="LICENSE.md">LICENSE.md</a> for more information.
-
 <!-- Contact -->
 ## Contact
 
 Arushi SINHA - arushi.sinha24@imperial.ac.uk
-
-Project Link: [https://github.com/ese-ada-lovelace-2024/irp-as4623](https://github.com/ese-ada-lovelace-2024/irp-as4623)
 
 <!-- Acknowledgments -->
 ## Acknowledgements

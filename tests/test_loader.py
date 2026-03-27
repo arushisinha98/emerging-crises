@@ -4,7 +4,7 @@ import pandas as pd
 from src.data.loader import TopicClassifier, WorldBankDataLoader, OECDDataLoader, YahooFinanceDataLoader, CrisisLabeller
 
 # test config file for testing
-test_config_path = "tests/test_data/test_config.json"
+test_config_path = "tests/test_config.json"
 
 def test_TopicClassifier_creation():
     classifier = TopicClassifier(data_tag="TEST", config_path=test_config_path)
@@ -107,7 +107,7 @@ def test_YahooFinanceDataLoader():
         assert True, "Test passed despite API issues"
 
 def test_CrisisLabeller():
-    filepath = "tests/test_data/test_crises.xlsx"
+    filepath = "tests/test_crises.xlsx"
     
     # Check if test crisis file exists
     if not os.path.exists(filepath):
@@ -117,7 +117,7 @@ def test_CrisisLabeller():
         
     try:
         labeller = CrisisLabeller(crisis_file=filepath)
-        labels = labeller.create_labels(lookback_years=2, recovery_years=0, output_file="tests/test_data/test_labels.csv")
+        labels = labeller.create_labels(lookback_years=2, recovery_years=0, output_file="tests/test_labels.csv")
         
         assert isinstance(labels, pd.DataFrame), "Labels should be a DataFrame"
         assert not labels.empty, "Labels DataFrame should not be empty"
@@ -125,8 +125,8 @@ def test_CrisisLabeller():
         assert 'Year' in labels.columns, "Labels should contain 'Year' column"
         
         # Clean up test file
-        if os.path.exists("tests/test_data/test_labels.csv"):
-            os.remove("tests/test_data/test_labels.csv")
+        if os.path.exists("tests/test_labels.csv"):
+            os.remove("tests/test_labels.csv")
             
         print(f"CrisisLabeller test passed: Labels shape: {labels.shape}")
         
