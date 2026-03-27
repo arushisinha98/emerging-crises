@@ -1,4 +1,4 @@
-from src.data.data_utilities import get_series_frequency, join_timelines, merge_timeseries
+from data.data_utilities import get_series_frequency, join_timelines, merge_timeseries
 
 import pandas as pd
 

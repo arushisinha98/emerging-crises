@@ -1,7 +1,7 @@
 import os
 import pandas as pd
 
-from src.data.loader import TopicClassifier, WorldBankDataLoader, OECDDataLoader, YahooFinanceDataLoader, CrisisLabeller
+from data.loader import TopicClassifier, WorldBankDataLoader, OECDDataLoader, YahooFinanceDataLoader, CrisisLabeller
 
 # test config file for testing
 test_config_path = "tests/test_config.json"

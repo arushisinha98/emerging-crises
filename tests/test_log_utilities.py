@@ -2,7 +2,7 @@ import time
 import numpy as np
 import pandas as pd
 
-from src.data.log_utilities import _find_project_root, setup_logging, APICallLogger, DataLogger
+from data.log_utilities import _find_project_root, setup_logging, APICallLogger, DataLogger
 
 def test_find_project_root():
     root = _find_project_root()
