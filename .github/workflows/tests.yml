@@ -37,4 +37,5 @@ jobs:
       - name: Run pytest
         run: |
           export PATH="$HOME/.pixi/bin:$PATH"
+          export PYTHONPATH=$PYTHONPATH:.
           pixi run pytest -v .
