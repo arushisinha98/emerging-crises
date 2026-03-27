@@ -3,7 +3,7 @@
   <h1>
     Challenges in and Recommendations for Predicting Financial Crises in Emerging Markets
   </h1>
-  <img src="project-plan/figures/turkey-crises.png" width="600" height="auto" />
+  <img src="figures/turkey-crises.png" width="600" height="auto" />
   <p>
   Arushi SINHA<br>
   Imperial College London
