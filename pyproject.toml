@@ -10,7 +10,7 @@ authors = [
     { name = "Arushi Sinha", email = "115908316+arushisinha98@users.noreply.github.com" }
 ]
 readme = "README.md"
-requires-python = ">=3.8"
+requires-python = "3.12.*"
 license = { file = "LICENSE" }
 
 [project.urls]
