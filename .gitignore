@@ -191,6 +191,8 @@ logs/
 *.sh.o*
 
 # .DS_Store files
-*.DS_Store# pixi environments
+*.DS_Store
+
+# pixi environments
 .pixi/*
 !.pixi/config.toml

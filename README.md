@@ -64,6 +64,7 @@ Start by cloning the repository. Install the dependencies and run the tests. The
 
 ```bash
 pixi install
+pixi run pip install -e .
 pixi run pytest -v .
 ```
 
